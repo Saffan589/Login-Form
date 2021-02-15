@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	
+
+</head>
+<body>
+	<form name="login" method="POST" onsubmit="return validate();" action="calculator.html">
+		<table>
+			<tr>
+				<td>Email</td>
+				<td><input id="email" type="text" required="" ></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="password" id="password" name="password" required=""></td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="submit"></td>
+			</tr>
+		</table>
+	</form>
+	<span id="error"></span>
+</body>
+	<script type="text/javascript">
+		
+		function validate(){
+			dbEmail = "saffan@gmail.com";
+			dbPass = "123456";
+			email = document.getElementById('email').value;
+			password = document.getElementById('password').value;
+			if (email.match(/\S+@\S+\.\S+/) && password.length >= 6 && email == dbEmail && password == dbPass) {
+				document.getElementById('error').innerHTML = "success";
+				return true;
+			}else{
+				document.getElementById('error').innerHTML = "Not success";
+				return false;
+			}
+		}
+	</script>
+</html>
